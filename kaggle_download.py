@@ -46,4 +46,3 @@ def data_to_hdf():
 
 if __name__ == '__main__':
     download_data()
-    data_to_hdf()
