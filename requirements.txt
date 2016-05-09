@@ -1,16 +1,8 @@
 jupyter
-scipy
-pandas
-matplotlib
 statsmodels
-scikit-learn
-seaborn
 nltk
 bokeh
 networkx
 theano
-requests
-beautifulsoup4
 xgboost
 keras
-cython

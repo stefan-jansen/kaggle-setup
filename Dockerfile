@@ -2,14 +2,14 @@
 
 FROM ubuntu:16.04
 
+ENV TERM=xterm
+ENV LC_ALL=C
+
 RUN apt-get update -y
 COPY dependencies.txt /tmp
 RUN xargs -a /tmp/dependencies.txt apt-get build-dep -y
 COPY packages.txt /tmp
 RUN xargs -a /tmp/packages.txt apt-get install -y
-
-ENV TERM=xterm
-ENV LC_ALL=C
 
 # Python setup
 RUN pip3 install virtualenv
