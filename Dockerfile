@@ -17,7 +17,7 @@ COPY requirements.txt /tmp
 RUN pip3 install -r /tmp/requirements.txt
 
 ## Create new user
-RUN useradd kaggle -d /home/kaggle -s /bin/bash
+RUN useradd kaggle -m -d /home/kaggle -s /bin/bash
 RUN adduser kaggle sudo
 
 # jupyter notebook
