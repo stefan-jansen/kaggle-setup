@@ -24,9 +24,9 @@ RUN useradd kaggle -d /home/kaggle -s /bin/bash
 RUN adduser kaggle sudo
 RUN chown -R kaggle /opt/kaggle
 
-# ipython
-COPY ipython_nb.sh /home/kaggle
-RUN chmod +x /home/kaggle/ipython_nb.sh
+# jupyter notebook
+COPY jupyter_notebook.sh /home/kaggle
+RUN chmod +x /home/kaggle/jupyter_notebook.sh
 RUN chown -R kaggle /home/kaggle
 
 # user activation
@@ -45,4 +45,4 @@ RUN mkdir -p /home/kaggle/analysis
 VOLUME /home/kaggle/analysis
 WORKDIR /home/kaggle/analysis
 
-CMD ['/home/kaggle/ipython_nb.sh']
+CMD ['/home/kaggle/jupyter_notebook.sh']
