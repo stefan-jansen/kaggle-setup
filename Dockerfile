@@ -21,7 +21,7 @@ RUN useradd kaggle -d /home/kaggle -s /bin/bash
 RUN adduser kaggle sudo
 
 # jupyter notebook
-COPY jupyter_notebook.sh /home/kaggle
+COPY jupyter_notebook.sh /home/kaggle/
 RUN mkdir -p /home/kaggle/analysis
 RUN chown -R kaggle /home/kaggle
 
