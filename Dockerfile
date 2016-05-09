@@ -23,8 +23,8 @@ RUN adduser kaggle sudo
 
 # jupyter notebook
 COPY jupyter_notebook.sh /home/kaggle
-RUN chmod 777 /home/kaggle/jupyter_notebook.sh
 RUN chown -R kaggle /home/kaggle
+#RUN chmod 777 /home/kaggle/jupyter_notebook.sh
 
 # user activation
 EXPOSE 8888
