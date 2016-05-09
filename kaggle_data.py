@@ -12,8 +12,6 @@ from bs4 import BeautifulSoup as soup
 from pandas import *
 
 analysis_dir = '/home/kaggle/analysis'
-print(environ['PYTHONPATH'])
-print(environ)
 
 
 def download_data(competition='expedia-hotel-recommendations', filetype='.gz'):
