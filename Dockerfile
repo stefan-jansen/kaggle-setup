@@ -15,6 +15,7 @@ RUN xargs -a /tmp/packages.txt apt-get install -y
 # Python setup
 COPY requirements.txt /tmp
 RUN pip3 install -r /tmp/requirements.txt
+RUN pip3 install --upgrade https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.8.0-cp34-cp34m-linux_x86_64.whl
 
 ## Create new user
 RUN useradd kaggle -d /home/kaggle -s /bin/bash
