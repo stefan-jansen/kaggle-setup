@@ -21,7 +21,6 @@ RUN useradd kaggle -d /home/kaggle -s /bin/bash
 RUN adduser kaggle sudo
 
 # jupyter notebook
-COPY jupyter_notebook.sh /home/kaggle/
 RUN mkdir -p /home/kaggle/analysis
 RUN chown -R kaggle /home/kaggle
 
@@ -30,11 +29,7 @@ EXPOSE 8888
 RUN echo 'kaggle ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 USER kaggle
 
-ENV SHELL=/bin/bash
-ENV HOME=/home/kaggle
-ENV USER=kaggle
-
 VOLUME /home/kaggle/analysis
 WORKDIR /home/kaggle/analysis
 
-CMD ['/home/kaggle/jupyter_notebook.sh']
+CMD ['jupyter notebook --no-browser --ip=127.0.0.1 --port=8888 --notebook-dir="/home/kaggle/analysis"']
