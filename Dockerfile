@@ -2,7 +2,9 @@
 
 FROM ubuntu:16.04
 
-RUN apt-get update -y && apt-get install build-essential -y
+RUN apt-get update -y
+COPY dependencies.txt /tmp
+RUN xargs -a /tmp/dependencies.txt apt-get build-dep -y
 COPY packages.txt /tmp
 RUN xargs -a /tmp/packages.txt apt-get install -y
 

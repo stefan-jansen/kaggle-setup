@@ -1,10 +1,9 @@
+build-essential
 python3-pip
 python3-h5py
 python3-tables
-build-dep python-matplotlib
 python-matplotlib
 unzip
-ipython3
 git
 gfortran
 libblas-dev
@@ -14,7 +13,6 @@ libxml2-dev
 libxslt1-dev
 libreadline6
 libreadline6-dev
-build-essential
 libjpeg8
 libjpeg8-dev
 libfreetype6
