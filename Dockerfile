@@ -24,13 +24,11 @@ RUN adduser kaggle sudo
 # jupyter notebook
 COPY jupyter_notebook.sh /home/kaggle
 RUN chown -R kaggle /home/kaggle
-#RUN chmod 777 /home/kaggle/jupyter_notebook.sh
 
 # user activation
 EXPOSE 8888
-RUN usermod -a -G sudo kaggle
+#RUN usermod -a -G sudo kaggle
 RUN echo 'kaggle ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
-COPY .bashrc.template /home/kaggle/.bashrc
 USER kaggle
 
 ENV SHELL=/bin/bash
