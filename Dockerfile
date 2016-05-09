@@ -13,16 +13,12 @@ COPY packages.txt /tmp
 RUN xargs -a /tmp/packages.txt apt-get install -y
 
 # Python setup
-RUN pip3 install virtualenv
-RUN /usr/local/bin/virtualenv /opt/kaggle --distribute
-
 COPY requirements.txt /tmp
-RUN /opt/kaggle/bin/pip install -r /tmp/requirements.txt
+RUN pip3 install -r /tmp/requirements.txt
 
 ## Create new user
 RUN useradd kaggle -d /home/kaggle -s /bin/bash
 RUN adduser kaggle sudo
-RUN chown -R kaggle /opt/kaggle
 
 # jupyter notebook
 COPY jupyter_notebook.sh /home/kaggle
