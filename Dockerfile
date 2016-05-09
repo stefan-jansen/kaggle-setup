@@ -32,4 +32,4 @@ USER kaggle
 VOLUME /home/kaggle/analysis
 WORKDIR /home/kaggle/analysis
 
-CMD ["jupyter", "notebook", "--no-browser", "--ip=127.0.0.1", "--port=8888", "--notebook-dir='/home/kaggle/analysis'"]
+CMD ["jupyter", "notebook", "--no-browser", "--ip=0.0.0.0", "--port=8888", "--notebook-dir='/home/kaggle/analysis'"]
