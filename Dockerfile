@@ -26,12 +26,11 @@ COPY ipython_nb.sh /home/kaggle
 RUN chmod +x /home/kaggle/ipython_nb.sh
 RUN chown -R kaggle /home/kaggle
 
-# bash virtualenv activation
-
 # user activation
 EXPOSE 8888
 RUN usermod -a -G sudo kaggle
 RUN echo 'kaggle ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+COPY .bashrc.template /home/kaggle/.bashrc
 USER kaggle
 
 ENV SHELL=/bin/bash
@@ -39,7 +38,6 @@ ENV HOME=/home/kaggle
 ENV USER=kaggle
 
 RUN mkdir -p /home/kaggle/analysis
-ADD .bashrc.template /home/kaggle/.bashrc
 
 VOLUME /home/kaggle/analysis
 WORKDIR /home/kaggle/analysis

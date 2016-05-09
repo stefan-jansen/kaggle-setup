@@ -31,7 +31,22 @@ alias mv='mv -i'
 # -> Prevents accidentally clobbering files.
 alias mkdir='mkdir -p'
 
+### History
 alias h='history'
+# don't put duplicate lines or lines starting with space in the history.
+HISTCONTROL=ignoreboth
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 alias j='jobs -l'
 alias which='type -a'
 alias ..='cd ..'
@@ -200,6 +215,7 @@ function ask()          # See 'killps' for example of use.
 #-------------------------------------------------------------
 
 export EDITOR='nano'
+alias reload='source ~/.bashrc'
 
 #-------------------------------------------------------------
 # Start SSH Agent on login
@@ -226,4 +242,10 @@ if [ -f "${SSH_ENV}" ]; then
     }
 else
     start_agent;
+fi
+
+
+# Alias definitions.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi

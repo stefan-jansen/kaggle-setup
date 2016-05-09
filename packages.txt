@@ -1,4 +1,10 @@
 python3-pip
+python3-h5py
+python3-tables
+build-dep python-matplotlib
+python-matplotlib
+unzip
+ipython3
 git
 gfortran
 libblas-dev
@@ -18,8 +24,3 @@ openssl
 libssl-dev
 pkg-config
 libffi-dev
-software-properties-common
-apt-transport-https
-ca-certificates
-nginx
-apache2-utils
