@@ -487,6 +487,7 @@ function ask()          # See 'killps' for example of use.
 
 export EDITOR='nano'
 alias reload='source ~/.bashrc'
+alias ipv4=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)
 
 #-------------------------------------------------------------
 # Start SSH Agent on login

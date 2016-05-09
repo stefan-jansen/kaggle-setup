@@ -5,6 +5,7 @@ FROM ubuntu:16.04
 ENV TERM=xterm
 ENV LC_ALL=C
 
+# Ubuntu package update & installation
 RUN apt-get update -y
 COPY dependencies.txt /tmp
 RUN xargs -a /tmp/dependencies.txt apt-get build-dep -y
